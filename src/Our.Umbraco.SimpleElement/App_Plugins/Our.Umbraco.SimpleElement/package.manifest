@@ -1,0 +1,37 @@
+{
+  "propertyEditors": [
+    {
+      "alias": "Our.Umbraco.SimpleElement",
+      "name": "SimpleElement",
+      "icon": "icon-document-dashed-line",
+      "editor": {
+        "view": "~/App_Plugins/Our.Umbraco.SimpleElement/Views/editor.html",
+        "valueType": "JSON"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "label": "Doctype",
+            "description": "Allowed doctype",
+            "key": "doctype",
+            "view": "textstring"
+          },
+          {
+            "label": "Hide Label",
+            "description": "Allowed doctype",
+            "key": "hideLabel",
+            "view": "boolean"
+          }
+        ]
+      }
+    }
+
+  ],
+  "javascript": [
+    "~/App_Plugins/Our.Umbraco.SimpleElement/Js/services.js",
+    "~/App_Plugins/Our.Umbraco.SimpleElement/Js/simpleelementeditor.controller.js"
+  ],
+  "css": [
+    "~/App_Plugins/Our.Umbraco.SimpleElement/Css/simpleelement.css"
+  ]
+}

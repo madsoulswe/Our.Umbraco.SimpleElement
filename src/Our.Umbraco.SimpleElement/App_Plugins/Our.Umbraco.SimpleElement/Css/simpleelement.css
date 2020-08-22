@@ -1,0 +1,34 @@
+﻿.simpleelement .editor {
+    padding: 20px;
+    background: #faf7f7;
+}
+
+.simpleelement .umb-tabs-nav {
+    background: #1b264f;
+    margin-bottom: 0;
+    padding: 10px 0 1px;
+}
+
+
+.simpleelement .umb-tabs-nav .umb-tab>a {
+    color: #fff;
+}
+
+    .simpleelement .umb-tabs-nav .umb-tab--active > a {
+        color: #fff;
+    }
+
+    .simpleelement .umb-tabs-nav .umb-tab > a:after {
+        background-color: #fff;
+    }
+
+.simpleelement .editor .umb-property {
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.simpleelement .editor .umb-property:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
