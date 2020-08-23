@@ -4,6 +4,7 @@
       "alias": "Our.Umbraco.SimpleElement",
       "name": "SimpleElement",
       "icon": "icon-document-dashed-line",
+      "hideLabel": true,
       "editor": {
         "view": "~/App_Plugins/Our.Umbraco.SimpleElement/Views/editor.html",
         "valueType": "JSON"
@@ -15,6 +16,12 @@
             "description": "Allowed doctype",
             "key": "doctype",
             "view": "textstring"
+          },
+          {
+            "label": "Tabs to the left",
+            "description": "",
+            "key": "alignLeft",
+            "view": "boolean"
           },
           {
             "label": "Hide Label",

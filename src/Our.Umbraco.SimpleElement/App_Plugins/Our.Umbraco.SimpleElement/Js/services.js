@@ -6,7 +6,7 @@
     ];
 
     var services = {
-        scaffold: function (alias, node) {
+        scaffold: function (alias, data) {
             var defer = $q.defer();
 
             contentResource.getScaffold(-20, alias).then(function (scaffold) {
@@ -19,11 +19,11 @@
 
                 services.cleanScaffold(scaffold);
 
-                if (node) {
-                    services.populate(scaffold, node);
+                if (data) {
+                    services.populate(scaffold, data);
                 }
 
-                defer.resolve({ scaffold, node });
+                defer.resolve({ scaffold, data });
 
             }, function (error) {
                 defer.reject(error);

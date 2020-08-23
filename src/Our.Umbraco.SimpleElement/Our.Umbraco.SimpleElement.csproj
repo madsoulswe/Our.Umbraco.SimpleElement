@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>Our.Umbraco.SimpleElement</RootNamespace>
+
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<ContentTargetFolders>content</ContentTargetFolders>
+
+	</PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="UmbracoCms.Web" Version="8.6.2" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Content Include="App_Plugins\**\*" />
+		<Compile Remove="**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="Controllers\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="App_Plugins\Our.Umbraco.SimpleElement\Css\simpleelement.css" />
+	  <None Remove="App_Plugins\Our.Umbraco.SimpleElement\Js\services.js" />
+	  <None Remove="App_Plugins\Our.Umbraco.SimpleElement\Js\simpleelementeditor.controller.js" />
+	  <None Remove="App_Plugins\Our.Umbraco.SimpleElement\Views\editor.html" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Include="ValueConverters\SimpleElementValueConverter.cs" />
+	</ItemGroup>
+</Project>

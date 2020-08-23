@@ -6,20 +6,29 @@
 .simpleelement .umb-tabs-nav {
     background: #1b264f;
     margin-bottom: 0;
-    padding: 10px 0 1px;
+    padding: 0px;
+}
+
+.simpleelement .umb-tabs-nav .umb-tab {
+    top: 0;
+    padding: 20px;
 }
 
 
 .simpleelement .umb-tabs-nav .umb-tab>a {
     color: #fff;
+    padding: 0;
 }
+    .simpleelement .umb-tabs-nav .umb-tab--active {
+        background: #35457b;
+    }
 
     .simpleelement .umb-tabs-nav .umb-tab--active > a {
         color: #fff;
     }
 
     .simpleelement .umb-tabs-nav .umb-tab > a:after {
-        background-color: #fff;
+        display:none;
     }
 
 .simpleelement .editor .umb-property {
@@ -31,4 +40,25 @@
 .simpleelement .editor .umb-property:last-child {
     border-bottom: 0;
     margin-bottom: 0;
+}
+
+.simpleelement.align-left {
+    display: flex;
+}
+
+    .simpleelement.align-left .umb-tabs-nav {
+        flex: 1;
+        max-width: 250px;
+    }
+
+    .simpleelement.align-left .umb-tabs-nav li {
+        display:block;
+    }
+
+    .simpleelement.align-left .umb-tabs-nav .umb-tab > a {
+        justify-content: start;
+    }
+
+.simpleelement.align-left .editor {
+    flex: 3;
 }
