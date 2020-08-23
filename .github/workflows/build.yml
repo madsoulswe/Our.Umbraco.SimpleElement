@@ -41,11 +41,11 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1
       
-      - name: Build Project
-        run: msbuild ./Our.Umbraco.SimpleElement.sln -p:Configuration=${{ env.CONFIG }}
+      #- name: Build Project
+      #  run: msbuild ./Our.Umbraco.SimpleElement.sln -p:Configuration=${{ env.CONFIG }}
       
       - name: Create NuGet package file
-        run: dotnet pack ${{ env.LIBRARY_FOLDER }} -c ${{ env.CONFIG }} --no-build --include-symbols -o ${{ env.OUTPUT }} /p:version=${{ steps.get_version.outputs.VERSION }} 
+        run: dotnet pack ${{ env.LIBRARY_FOLDER }} -c ${{ env.CONFIG }} --include-symbols -o ${{ env.OUTPUT }} /p:version=${{ steps.get_version.outputs.VERSION }} 
         
       - name: Create Umbraco package file
         run: UmbPack pack ./package.xml -o ${{ env.OUTPUT }} -v ${{ steps.get_version.outputs.VERSION }}
