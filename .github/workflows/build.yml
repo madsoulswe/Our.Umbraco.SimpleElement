@@ -7,7 +7,7 @@
 name: Build and Package
 
 env:
-  NAME: ${{ github.event.repository.name }}
+  NAME: Our.Umbraco.SimpleElement
   OUTPUT: ./Output
   LIBRARY_FOLDER: ./src/Our.Umbraco.SimpleElement
   CONFIG: release
