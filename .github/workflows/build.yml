@@ -7,6 +7,7 @@
 name: Build and Package
 
 env:
+  NAME: Our.Umbraco.SimpleElement
   OUTPUT: ./Output
   LIBRARY_FOLDER: ./src/Our.Umbraco.SimpleElement
   CONFIG: release
@@ -45,10 +46,16 @@ jobs:
       #  run: msbuild ./Our.Umbraco.SimpleElement.sln -p:Configuration=${{ env.CONFIG }}
       
       - name: Create NuGet package file
-        run: dotnet pack ${{ env.LIBRARY_FOLDER }} -c ${{ env.CONFIG }} --include-symbols -o ${{ env.OUTPUT }} /p:version=${{ steps.get_version.outputs.VERSION }} 
+        run: dotnet pack ${{ env.LIBRARY_FOLDER }} -c ${{ env.CONFIG }} -o ${{ env.OUTPUT }} /p:version=${{ steps.get_version.outputs.VERSION }} 
+      
+      - name: Push NuGet package file
+        run: dotnet nuget push "*.nupkg" -s ${{ env.OUTPUT }} -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
         
       - name: Create Umbraco package file
         run: UmbPack pack ./package.xml -o ${{ env.OUTPUT }} -v ${{ steps.get_version.outputs.VERSION }}
+ 
+      - name: Push Umbraco package file
+        run: UmbPack push "${{ env.OUTPUT }}/${{ env.NAME }}_${{ steps.get_version.outputs.VERSION }}.zip" -k ${{ secrets.UMB_API_KEY }}
         
       - name: upload-artifacts
         uses: actions/upload-artifact@v2
