@@ -1,4 +1,4 @@
-# Our.Umbraco.SimpleElement 
+# Our.Umbraco.SimpleElement (BETA)
 A simple property, where you can create a elementtype and have i renderd as a property.
 
 Usage
