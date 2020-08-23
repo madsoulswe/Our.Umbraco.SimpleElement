@@ -21,7 +21,7 @@
   </info>
   <files>
     <folder path="src/Our.Umbraco.SimpleElement/App_Plugins/Our.Umbraco.SimpleElement" orgPath="App_Plugins/Our.Umbraco.SimpleElement" />
-    <file path="src/Our.Umbraco.SimpleElement/bin/release/Our.Umbraco.SimpleElement.dll" orgPath="bin/Our.Umbraco.SimpleElement.dll" />
+    <file path="src/Our.Umbraco.SimpleElement/bin/release/net472/Our.Umbraco.SimpleElement.dll" orgPath="bin/Our.Umbraco.SimpleElement.dll" />
   </files>
   <Actions />
   <control />
