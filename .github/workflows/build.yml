@@ -7,7 +7,7 @@
 name: Build and Package
 
 env:
-  NAME: Our.Umbraco.SimpleElement
+  NAME: ${{ github.event.repository.name }}
   OUTPUT: ./Output
   LIBRARY_FOLDER: ./src/Our.Umbraco.SimpleElement
   CONFIG: release
@@ -39,8 +39,8 @@ jobs:
       - name: Setup UmbPack
         run: dotnet tool install Umbraco.Tools.Packages --global
         
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
+      #- name: Setup MSBuild
+      #  uses: microsoft/setup-msbuild@v1
       
       #- name: Build Project
       #  run: msbuild ./Our.Umbraco.SimpleElement.sln -p:Configuration=${{ env.CONFIG }}
@@ -49,7 +49,7 @@ jobs:
         run: dotnet pack ${{ env.LIBRARY_FOLDER }} -c ${{ env.CONFIG }} -o ${{ env.OUTPUT }} /p:version=${{ steps.get_version.outputs.VERSION }} 
       
       - name: Push NuGet package file
-        run: dotnet nuget push "*.nupkg" -s ${{ env.OUTPUT }} -k ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push "${{ env.OUTPUT }}/*.nupkg" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
         
       - name: Create Umbraco package file
         run: UmbPack pack ./package.xml -o ${{ env.OUTPUT }} -v ${{ steps.get_version.outputs.VERSION }}
