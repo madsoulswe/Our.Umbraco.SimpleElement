@@ -6,6 +6,12 @@
 
 		<IncludeContentInPack>true</IncludeContentInPack>
 		<ContentTargetFolders>content</ContentTargetFolders>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageIcon>icon.png</PackageIcon>
+		<RepositoryUrl>https://github.com/madsoulswe/Our.Umbraco.SimpleElement/</RepositoryUrl>
+		<RepositoryType>GIT</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/madsoulswe/Our.Umbraco.SimpleElement/</PackageProjectUrl>
 
 	</PropertyGroup>
 
@@ -27,6 +33,10 @@
 	  <None Remove="App_Plugins\Our.Umbraco.SimpleElement\Js\services.js" />
 	  <None Remove="App_Plugins\Our.Umbraco.SimpleElement\Js\simpleelementeditor.controller.js" />
 	  <None Remove="App_Plugins\Our.Umbraco.SimpleElement\Views\editor.html" />
+	  <None Include="..\..\icon.png">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>
