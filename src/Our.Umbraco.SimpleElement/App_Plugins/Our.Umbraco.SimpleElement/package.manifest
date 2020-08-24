@@ -17,6 +17,19 @@
             "key": "doctype",
             "view": "textstring"
           },
+
+          {
+            "label": "Toggle button label",
+            "description": "Add a label and a show/hide button will be displayed",
+            "key": "toggleLabel",
+            "view": "textstring"
+          },
+          {
+            "label": "Toggle icon",
+            "description": "",
+            "key": "toggleIcon",
+            "view": "textstring"
+          },
           {
             "label": "Tabs to the left",
             "description": "",
