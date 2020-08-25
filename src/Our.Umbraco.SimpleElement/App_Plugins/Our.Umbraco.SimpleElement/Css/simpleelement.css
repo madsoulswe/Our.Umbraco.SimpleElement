@@ -1,4 +1,22 @@
-﻿.simpleelement .editor {
+﻿.simpleelement {
+    display:flex;
+    flex-direction: column;
+}
+
+.simpleelement .toggle {
+    margin-bottom: 15px;
+}
+
+.simpleelement .toggle .umb-button:first-child {
+    margin-left: 0;
+}
+
+.simpleelement .element {
+    display: block;
+    width: 100%;
+}
+
+.simpleelement .editor {
     padding: 20px;
     background: #faf7f7;
 }
@@ -11,7 +29,7 @@
 
 .simpleelement .umb-tabs-nav .umb-tab {
     top: 0;
-    padding: 20px;
+    padding: 15px 20px;
 }
 
 
@@ -45,6 +63,10 @@
 .simpleelement.align-left {
     display: flex;
 }
+
+    .simpleelement.align-left .element {
+        display: flex;
+    }
 
     .simpleelement.align-left .umb-tabs-nav {
         flex: 1;

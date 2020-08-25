@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Develop", "Develop", "{61E3
 		.github\workflows\build.yml = .github\workflows\build.yml
 		gulpfile.js = gulpfile.js
 		package.json = package.json
+		package.xml = package.xml
 		paths.json = paths.json
 		readme.md = readme.md
 	EndProjectSection

@@ -5,22 +5,25 @@
         
         var vm = this;
 
-
-
+        vm.toggle = $scope.model.config.toggle == "1";
+        vm.toggleLabelOpen = $scope.model.config.toggleLabelOpen || "";
+        vm.toggleLabelClose = $scope.model.config.toggleLabelClose || "";
+        vm.toggleIcon = $scope.model.config.toggleIcon || "";
         vm.doctype = $scope.model.config.doctype;
         vm.alignLeft = $scope.model.config.alignLeft == "1";
 
+        vm.display = !vm.toggle;
+
         vm.loading = true;
         vm.edit = false;
-
-        console.log($scope);
 
         $scope.model.hideLabel = $scope.model.config.hideLabel == "1";
 
         vm.data = $scope.model.value || {};
 
-        console.log("LOAD");
-        console.log($scope.model.value);
+        vm.toggle = function () {
+            vm.display = !vm.display;
+        };
 
         vm.changeTab = function (selectedTab) {
 

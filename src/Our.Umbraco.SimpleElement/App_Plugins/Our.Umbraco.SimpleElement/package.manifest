@@ -17,6 +17,32 @@
             "key": "doctype",
             "view": "textstring"
           },
+
+          {
+            "label": "Toggle",
+            "description": "Make the element toggle with open and close buttons",
+            "key": "toggle",
+            "view": "boolean"
+          },
+
+          {
+            "label": "Open label",
+            "description": "",
+            "key": "toggleLabelOpen",
+            "view": "textstring"
+          },
+          {
+            "label": "Close label",
+            "description": "",
+            "key": "toggleLabelClose",
+            "view": "textstring"
+          },
+          {
+            "label": "Toggle icon",
+            "description": "",
+            "key": "toggleIcon",
+            "view": "textstring"
+          },
           {
             "label": "Tabs to the left",
             "description": "",
@@ -30,6 +56,10 @@
             "view": "boolean"
           }
         ]
+      },
+      "defaultConfig": {
+        "toggleLabelOpen": "Open",
+        "toggleLabelClose": "Close"
       }
     }
 
