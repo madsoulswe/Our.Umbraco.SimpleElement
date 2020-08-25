@@ -1,18 +1,25 @@
 ﻿<div class="simpleelement" ng-class="{'align-left': vm.alignLeft }" ng-controller="SimpleElement.EditorController as vm">
     <umb-load-indicator class="mt2 mb2" ng-if="vm.loading"></umb-load-indicator>
 
-
-    <ul role="tablist" class="umb-tabs-nav" ng-if="!vm.loading">
-        <li class="umb-tab" role="tab" aria-selected="true" tabindex="0" ng-repeat="tab in vm.node.variants[0].tabs |  limitTo: vm.maxTabs" data-element="tab-{{tab.alias}}" ng-class="{'umb-tab--active': tab.active, 'umb-tab--error': tabHasError}" val-tab>
-            <a ng-href="" ng-click="vm.changeTab(tab)">{{ tab.label }}</a>
-        </li>
-    </ul>
-    
-    
-    <div class="editor" ng-if="vm.node">
-        <umb-property  data-element="property-{{property.alias}}" ng-repeat="property in vm.tab.properties" property="property">
-            <umb-property-editor model="property"></umb-property-editor>
-        </umb-property>
+    <div class="toggle" ng-if="vm.toggle">
+        <umb-button action="vm.toggle()" ng-if="!vm.display" button-style="info" type="button" icon="{{vm.toggleIcon}}" label="{{vm.toggleLabelOpen}}"></umb-button>
+        <umb-button action="vm.toggle()" ng-if="vm.display" button-style="info" type="button" icon="{{vm.toggleIcon}}" label="{{vm.toggleLabelClose}}"></umb-button>
     </div>
-    
+    <div class="element">
+
+
+        <ul role="tablist" class="umb-tabs-nav" ng-if="!vm.loading && vm.display">
+            <li class="umb-tab" role="tab" aria-selected="true" tabindex="0" ng-repeat="tab in vm.node.variants[0].tabs |  limitTo: vm.maxTabs" data-element="tab-{{tab.alias}}" ng-class="{'umb-tab--active': tab.active, 'umb-tab--error': tabHasError}" val-tab>
+                <a ng-href="" ng-click="vm.changeTab(tab)">{{ tab.label }}</a>
+            </li>
+        </ul>
+
+
+        <div class="editor" ng-if="vm.node && vm.display">
+            <umb-property data-element="property-{{property.alias}}" ng-repeat="property in vm.tab.properties" property="property">
+                <umb-property-editor model="property"></umb-property-editor>
+            </umb-property>
+        </div>
+    </div>
+
 </div>
