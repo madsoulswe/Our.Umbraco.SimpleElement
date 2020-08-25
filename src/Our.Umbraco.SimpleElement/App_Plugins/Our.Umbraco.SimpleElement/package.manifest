@@ -19,9 +19,22 @@
           },
 
           {
-            "label": "Toggle button label",
-            "description": "Add a label and a show/hide button will be displayed",
-            "key": "toggleLabel",
+            "label": "Toggle",
+            "description": "Make the element toggle with open and close buttons",
+            "key": "toggle",
+            "view": "boolean"
+          },
+
+          {
+            "label": "Open label",
+            "description": "",
+            "key": "toggleLabelOpen",
+            "view": "textstring"
+          },
+          {
+            "label": "Close label",
+            "description": "",
+            "key": "toggleLabelClose",
             "view": "textstring"
           },
           {
@@ -43,6 +56,10 @@
             "view": "boolean"
           }
         ]
+      },
+      "defaultConfig": {
+        "toggleLabelOpen": "Open",
+        "toggleLabelClose": "Close"
       }
     }
 

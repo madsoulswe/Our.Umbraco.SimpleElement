@@ -1,9 +1,9 @@
 ﻿<div class="simpleelement" ng-class="{'align-left': vm.alignLeft }" ng-controller="SimpleElement.EditorController as vm">
     <umb-load-indicator class="mt2 mb2" ng-if="vm.loading"></umb-load-indicator>
 
-    <div class="toggle" ng-if="vm.toggleLabel != ''">
-        <umb-button action="vm.toggle()" ng-if="!vm.display" button-style="info" type="button" icon="{{vm.toggleIcon}}" label="{{vm.toggleLabel}}"></umb-button>
-        <umb-button action="vm.toggle()" ng-if="vm.display" button-style="info" type="button" icon="icon-wrong" label-key="general_close"></umb-button>
+    <div class="toggle" ng-if="vm.toggle">
+        <umb-button action="vm.toggle()" ng-if="!vm.display" button-style="info" type="button" icon="{{vm.toggleIcon}}" label="{{vm.toggleLabelOpen}}"></umb-button>
+        <umb-button action="vm.toggle()" ng-if="vm.display" button-style="info" type="button" icon="{{vm.toggleIcon}}" label="{{vm.toggleLabelClose}}"></umb-button>
     </div>
     <div class="element">
 
