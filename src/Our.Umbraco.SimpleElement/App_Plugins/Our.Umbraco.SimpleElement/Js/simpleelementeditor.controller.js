@@ -5,7 +5,7 @@
         
         var vm = this;
 
-        vm.toggle = $scope.model.config.toggle == "1";
+        vm.showToggle = $scope.model.config.toggle == "1";
         vm.toggleLabelOpen = $scope.model.config.toggleLabelOpen || "";
         vm.toggleLabelClose = $scope.model.config.toggleLabelClose || "";
         vm.toggleIcon = $scope.model.config.toggleIcon || "";
